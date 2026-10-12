@@ -1,0 +1,6 @@
+# Copy to ~/.ssh/config.local, then replace with your own values.
+Host example-server
+    HostName server.example.com
+    User yourname
+    IdentityFile ~/.ssh/id_ed25519
+    ForwardAgent no

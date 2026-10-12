@@ -1,0 +1,21 @@
+# Runtime identities, credentials, and local backups never belong in Git.
+/private/
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.p12
+*.pfx
+*.sqlite*
+*.db
+*.bak
+*.backup
+*.log
+result
+result-*
+.DS_Store
+.direnv/
+.idea/
+.vscode/
