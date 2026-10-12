@@ -15,7 +15,7 @@
     };
     # A string path: Git reads the local file at runtime.
     # Never use builtins.readFile here; secrets must not enter the Nix store.
-    includes = [ { path = "${config.home.homeDirectory}/.config/nix-dual-mac/gitconfig"; } ];
+    includes = [ { path = "${config.home.homeDirectory}/.config/nix-sync/gitconfig"; } ];
   };
   programs.ssh = {
     enable = true;

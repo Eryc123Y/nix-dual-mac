@@ -2,7 +2,7 @@
 # Local Git fixtures only. No network, Nix build, sudo, or activation.
 set -euo pipefail
 SOURCE=$(cd "$(dirname "$0")/.." && pwd)
-TEST_ROOT=$(mktemp -d "${TMPDIR:-/tmp}/nix-dual-mac-test.XXXXXX")
+TEST_ROOT=$(mktemp -d "${TMPDIR:-/tmp}/nix-sync-test.XXXXXX")
 trap 'rm -rf "$TEST_ROOT"' EXIT
 export GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1
 export GIT_AUTHOR_NAME='Sync test' GIT_COMMITTER_NAME='Sync test'
@@ -51,7 +51,7 @@ remote_change
 run_pull
 cmp "$case_dir/a/remote.txt" "$case_dir/b/remote.txt"
 [ "$(git -C "$case_dir/a" rev-parse HEAD)" = "$(git -C "$case_dir/b" rev-parse HEAD)" ]
-pass 'Second Mac receives the exact commit'
+pass 'Another device receives the exact commit'
 
 fixture dirty
 remote_change

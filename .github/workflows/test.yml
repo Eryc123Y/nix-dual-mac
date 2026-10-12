@@ -1,4 +1,4 @@
-name: Git sync tests
+name: Sync and platform tests
 on:
   push:
   pull_request:
@@ -13,5 +13,6 @@ jobs:
           persist-credentials: false
       - name: Check shell syntax and synchronization guards
         run: |
-          bash -n sync.sh scripts/check.sh tests/sync.sh
+          bash -n sync.sh scripts/check.sh tests/sync.sh tests/platforms.sh
           bash tests/sync.sh
+          bash tests/platforms.sh

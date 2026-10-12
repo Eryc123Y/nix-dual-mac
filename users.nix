@@ -1,5 +1,7 @@
 {
-  # Run `id -un` on each Mac. These accounts must already exist.
+  # Run `id -un` on each device. Use existing account names.
   macbook = "yourname";
   macmini = "yourname";
+  nixos = "yourname";
+  linux = "yourname";
 }
